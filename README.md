@@ -3,6 +3,7 @@ e-works-codecpack
 
 authors:
 Emanuele Bizzarri <emabiz76@gmail.com>
+
 Yuri Valentini <yuroller@gmail.com>
 
 release date: 2013.09.30
@@ -50,6 +51,11 @@ License
 --------------------------
 GPLv2
 See LICENSE file
+
+Setup
+--------------------------
+You can download setup here:
+[a relative link](open/opencodecpack_setup.exe)
 
 
 1. Source tree:
@@ -100,6 +106,9 @@ Rename yasm executable to yasm.exe and copy it into c:\tools (add c:\tools to PA
 Used by:
 xvidcore
 libx264
+
+
+2.5 isetup-5.5.3-unicode.exe
 
 
 3. Build video dlls
@@ -222,5 +231,11 @@ ewh264.dll
 ewxvid.dll
 msinttypes: http://code.google.com/p/msinttypes
 
-Open src\base\video\video_base.sln
+Open src\open\video\video_base.sln
 Build solution in Debug and Release configurations
+
+3.4. Build codec pack setup
+--------------------------
+Launch build_codecpack_setup.bat
+
+
