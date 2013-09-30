@@ -2,12 +2,12 @@ e-works-codecpack
 =================
 
 authors:
-Emanuele Bizzarri <e.bizzarri@e-works.it>
+Emanuele Bizzarri <emabiz76@gmail.com>
 Yuri Valentini <yuroller@gmail.com>
 
 release date: 2013.09.30
 
-------------
+
 Introduction
 ------------
 e-works open codeckpack is the open source collection of codecs used to extend e-works platform functionalities.
@@ -45,13 +45,13 @@ mov
 mp3
 adts(aac container)
 
---------------------------
+
 License
 --------------------------
 GPLv2
 See LICENSE file
 
---------------------------
+
 1. Source tree:
 --------------------------
 inside ewct\dll\src there are some folders:
@@ -63,19 +63,18 @@ dir src\Debug contains unofficial debug compiled dlls
 use src\copy_dll_to_official_open.bat to copy unofficial dlls to official open folder
 
 
---------------------------
+
 2. Building tools
 --------------------------
 2.1. Visual Studio 2010 Express
 Used by:
 video_open.sln
 
---------------------------
+
 2.2. Git-1.8.3-preview20130601.exe
 Used by:
 
 
---------------------------
 2.3. mingw-get-inst-20120426.exe
 website: http://www.mingw.org
 
@@ -94,7 +93,7 @@ Open file c:\MinGW\msys\1.0\msys.bat and add line:
     call "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\vcvars32.bat"
 at the top.
 
---------------------------   
+
 2.4. yasm-1.2.0-win32.exe
 website: http://www.tortall.net/projects/yasm
 Rename yasm executable to yasm.exe and copy it into c:\tools (add c:\tools to PATH env variable)
@@ -102,8 +101,9 @@ Used by:
 xvidcore
 libx264
 
---------------------------
+
 3. Build video dlls
+--------------------------
 video dlls depend on libx264, ffmpeg and gtest, so compilation order must be followed
 
 Notes:
@@ -112,8 +112,9 @@ Notes:
 
 2.pthreads website: http://sourceware.org/pthreads-win32
 
---------------------------
+
 3.1. Build gtest
+--------------------------
 Update googletest from repository inside src\common\_third\gtest:
     "svn checkout http://googletest.googlecode.com/svn/trunk/ googletest-read-only"
 Open and convert common\_third\gtest\msvc\gtest.sln solution with Visual Studio
@@ -125,8 +126,9 @@ Edit following properties:
 Build solution in Debug and Release configurations
 Launch common/_third/copy_third_bin.bat
 
---------------------------
+
 3.2. Build libx264 (ewh264.dll)
+--------------------------
 website: http://www.videolan.org/developers/x264.html
 Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264-snapshot-20120508-2245-dll
 
@@ -148,42 +150,48 @@ Open mingw shell, go to src/open/_third
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_x264.sh
 
---------------------------
+
 3.3. Build ffmpeg
+--------------------------
 ffmpeg depends on some codec libraries, so compilation order must be followed
 
---------------------------
+
 3.3.1. Build faac
+--------------------------
 website: http://www.audiocoding.com/faac.html
 Open mingw shell, go to src/open/third
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_faac.sh
 
---------------------------
+
 3.3.2. Build lame
+--------------------------
 website: http://lame.sourceforge.net
 Open mingw shell, go to src/open/third
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_lame.sh
 
---------------------------
+
 3.3.3. Build xvid
+--------------------------
 website: http://www.xvid.org
 Remove -mno-cygwin param from xvidcore\build\generic\configure
 Open mingw shell, go to src/open/third
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_xvid.sh
 
---------------------------
+
 3.3.4. Build libx264 (ffmpeg)
+--------------------------
 website: http://www.videolan.org/developers/x264.html
 Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264-snapshot-20120508-2245
 Open mingw shell, go to src/open/_third
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_x264.sh
 
---------------------------
+
 3.3.5. Build ffmpeg
+--------------------------
 website: http://www.ffmpeg.org/download.html
 snapshot: src\base\_third\ffmpeg-0.10.3
 
@@ -200,12 +208,14 @@ Edit "configure" and add -lpthread support:
 Launch ". ./build__settings.sh" (don't forget sourcing)
 Launch ./build_ffmpeg.sh
 
---------------------------
+
 3.3.6. Copy ffmpeg dependencies
+--------------------------
 Launch ./copy_third_bin.bat
 
---------------------------
+
 3.4. Build video dlls
+--------------------------
 produced dlls:
 ewh263.dll
 ewh264.dll
