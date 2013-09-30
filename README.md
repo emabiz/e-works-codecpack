@@ -54,8 +54,7 @@ See LICENSE file
 
 Setup
 --------------------------
-You can download setup here:
-[a relative link](open/opencodecpack_setup.exe)
+You can download setup from release section
 
 
 1. Source tree:
