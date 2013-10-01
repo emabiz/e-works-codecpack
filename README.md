@@ -77,7 +77,7 @@ Video dlls depend on libx264, ffmpeg and gtest, so compilation order must be fol
 
 
 ### Build gtest ###
-	Update googletest from repository inside src\common\_third\gtest:
+	Update googletest from repository inside common\_third\gtest:
 	    "svn checkout http://googletest.googlecode.com/svn/trunk/ googletest-read-only"
 	Open and convert common\_third\gtest\msvc\gtest.sln solution with Visual Studio
 	
@@ -101,7 +101,7 @@ Video dlls depend on libx264, ffmpeg and gtest, so compilation order must be fol
 	            echo 'SOFLAGS=-shared -Wl,--out-implib,\$(IMPLIBNAME) -Wl,--output-def,$(DEFNAME) -Wl,--enable-auto-image-base' >> config.mak
 	
 	
-	Open mingw shell, go to src/open/_third
+	Open mingw shell, go to open/_third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_x264.sh
 
@@ -112,14 +112,14 @@ ffmpeg depends on some codec libraries, so compilation order must be followed
 
 ### Build faac ###
 	website: http://www.audiocoding.com/faac.html
-	Open mingw shell, go to src/open/third
+	Open mingw shell, go to open/third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_faac.sh
 
 
 ### Build lame ###
 	website: http://lame.sourceforge.net
-	Open mingw shell, go to src/open/third
+	Open mingw shell, go to open/third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_lame.sh
 
@@ -127,7 +127,7 @@ ffmpeg depends on some codec libraries, so compilation order must be followed
 ### Build xvid ###
 	website: http://www.xvid.org
 	Remove -mno-cygwin param from xvidcore\build\generic\configure
-	Open mingw shell, go to src/open/third
+	Open mingw shell, go to open/third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_xvid.sh
 
@@ -135,14 +135,14 @@ ffmpeg depends on some codec libraries, so compilation order must be followed
 ### Build libx264 (ffmpeg) ###
 	website: http://www.videolan.org/developers/x264.html
 	Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264-snapshot-20120508-2245
-	Open mingw shell, go to src/open/_third
+	Open mingw shell, go to open/_third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_x264.sh
 
 
 ### Build ffmpeg ###
 	website: http://www.ffmpeg.org/download.html
-	snapshot: src\base\_third\ffmpeg-0.10.3
+	snapshot: common\_third\ffmpeg-0.10.3
 	
 	produced dlls:
 	avcodec-53.dll
@@ -168,7 +168,7 @@ ffmpeg depends on some codec libraries, so compilation order must be followed
 	- ewh264.dll
 	- ewxvid.dll
 	- msinttypes: http://code.google.com/p/msinttypes	
-	Open src\open\video\video_open.sln
+	Open open\video\video_open.sln
 	Build solution in Debug and Release configurations
 
 ### Build codec pack setup ###
