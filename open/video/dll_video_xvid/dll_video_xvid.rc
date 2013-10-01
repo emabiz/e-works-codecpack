@@ -1,0 +1,32 @@
+#include "version_no.h"
+
+#define IDR_VERSION1 1
+
+IDR_VERSION1 VERSIONINFO
+FILEVERSION VERSION_FILE
+PRODUCTVERSION VERSION_PRODUCT
+FILEOS 0x00000004
+FILETYPE 0x00000002
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "041004B0"
+    BEGIN
+      VALUE "CompanyName", "e-works srl\0"
+      VALUE "FileDescription", "e-works xvid\0"
+      VALUE "FileVersion", VERSION_FILESTR "\0"
+      VALUE "InternalName", "xvid\0"
+      VALUE "LegalCopyright", "\0"
+      VALUE "LegalTrademarks", "\0"
+      VALUE "OriginalFilename", "\0"
+      VALUE "ProductName", "e-works xvid\0"
+      VALUE "ProductVersion", "4.0"
+      VALUE "Comments", "\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0410, 0x04B0
+  END
+END
+

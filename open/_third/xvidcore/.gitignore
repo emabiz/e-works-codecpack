@@ -1,0 +1,5 @@
+/build/generic/=build
+/build/generic/config.log
+/build/generic/config.status
+/build/generic/gcc-ver.exe
+/build/generic/platform.inc

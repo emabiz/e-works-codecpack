@@ -1,0 +1,27 @@
+{
+    "name" : "libfaac",    
+    "channels" :
+                  {
+                    "values" : [1,2,3,4,5,6],
+                    "default" : 1 
+                  },            
+    "samplerate" :
+                  {
+                    "values" : [8000,11025,16000,22050,44100,48000],
+                    "default" : 44100
+                  },
+    "bitrate" :
+                  {
+                    "values" : ["cbr","vbr"],
+                    "default" : "vbr"
+                  },
+    "vbr" :
+                  {
+                    "default" : "q100"
+                  },
+    "profile" :
+                  {
+                    "default" : "main"
+                  }    
+}    
+

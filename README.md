@@ -140,19 +140,13 @@ Launch common/_third/copy_third_bin.bat
 website: http://www.videolan.org/developers/x264.html
 Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264-snapshot-20120508-2245-dll
 
-Modify "configure" file in section "generate config files":
-Before:
-if [ "$SYS" = "MINGW" ]; then
-        echo "SONAME=libx264-$API.dll" >> config.mak
-        echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
-        echo 'SOFLAGS=-Wl,--out-implib,$(IMPLIBNAME) -Wl,--enable-auto-image-base' >> config.mak
-        
-After:
-if [ "$SYS" = "MINGW" ]; then
-        echo "SONAME=libx264-$API.dll" >> config.mak
-        echo "IMPLIBNAME=libx264-$API.lib" >> config.mak
-        echo "DEFNAME=libx264-$API.def" >> config.mak
-        echo 'SOFLAGS=-Wl,--output-def,$(DEFNAME) -Wl,--enable-auto-image-base' >> config.mak
+Modify "configure" file in section "generate config files" (line 1171):
+            #echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
+            #echo "SOFLAGS=-shared -Wl,--out-implib,\$(IMPLIBNAME) -Wl,--enable-auto-image-base $SOFLAGS" >> config.mak
+            echo "IMPLIBNAME=libx264-$API.lib" >> config.mak            
+            echo "DEFNAME=libx264-$API.def" >> config.mak
+            echo 'SOFLAGS=-shared -Wl,--out-implib,\$(IMPLIBNAME) -Wl,--output-def,$(DEFNAME) -Wl,--enable-auto-image-base' >> config.mak
+
 
 Open mingw shell, go to src/open/_third
 Launch ". ./build__settings.sh" (don't forget sourcing)

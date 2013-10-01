@@ -1,0 +1,26 @@
+{
+    "name" : "libmp3lame",    
+    "channels" :
+                  {
+                    "values" : [1,2],
+                    "default" : 1 
+                  },             
+    "samplerate" :
+                  {
+                    "values" : [8000,11025,12000,16000,22050,24000,32000,44100,48000],
+                    "default" : 44100
+                  },
+    "bitrate" :
+                  {
+                    "values" : ["cbr","vbr"],
+                    "default" : "vbr"
+                  },
+    "vbr" :
+                  {
+                    "default" : "q0"
+                  },
+    "profile" :
+                  {
+                    "default" : "q2"
+                  }                                                                               
+}      

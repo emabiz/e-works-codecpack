@@ -1,0 +1,74 @@
+{
+    "container" :
+                  {
+                    "avi" :
+                            {
+                            "video" :
+                                      {
+                                        "values" : ["xvid","mp4"],
+                                        "default" : "xvid" 
+                                      },
+                            "audio" :
+                                      {
+                                        "values" : ["mp3"],
+                                        "default" : "mp3" 
+                                      }                                                        
+                            },
+                    "asf" :              
+                            {
+                            "video" :
+                                      {
+                                        "values" : ["wmv2"]                           
+                                      },
+                            "audio" :
+                                      {
+                                        "values" : ["wmav2"]                           
+                                      }    
+                            },
+                    "flv" :
+                            {
+                            "video" :
+                                      {
+                                        "values" : ["flv1","h264"],
+                                        "default" : "h264"                                        
+                                      },
+                            "audio" :
+                                      {
+                                        "values" : ["mp3","aac"],
+                                        "default" : "aac",
+                                        "samplerate" : [11025,22050,44100]
+                                      }                                
+                            },
+                    "mp4" :
+                            {
+                            "video" :
+                                      {
+                                        "values" : ["h264"]
+                                      },
+                            "audio" :
+                                      {
+                                        "values" : ["aac"]
+                                      }                  
+                            },
+                    "mp3" :
+                            {              
+                            "audio" :
+                                      {
+                                        "values" : ["mp3"]                           
+                                      }            
+                            },
+                    "aac" :
+                            {                                      
+                            "audio" :
+                                      {
+                                        "values" : ["aac"]                           
+                                      }    
+                            }
+                  },
+    "dll" :
+                  {  
+                      "avcodec" : "avcodec-53.dll", 
+                      "avformat" : "avformat-53.dll",
+                      "avutil" : "avutil-51.dll"
+                  }  
+}

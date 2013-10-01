@@ -1,0 +1,4 @@
+#-q 80 Set quantizer quality (default: 100, averages at approx. 128 kbps VBR for 
+#a normal stereo input file at 16 bit and 44.1 kHz sample rate).
+global_quality=9440
+cutoff=12000

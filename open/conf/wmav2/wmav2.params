@@ -1,0 +1,17 @@
+{
+    "name" : "wmav2",    
+    "channels" :
+                  {
+                    "values" : [1,2],
+                    "default" : 1 
+                  },    
+    "samplerate" :
+                  {
+                    "values" : [8000,11025,16000,22050,44100],
+                    "default" : 44100
+                  },
+    "bitrate" :
+                  {
+                    "values" : ["cbr"]                    
+                  }                                                
+}

@@ -1,0 +1,100 @@
+/*! \mainpage Main
+
+\section contents Table of contents
+
+\li \ref intro
+\li \ref usage
+\li \ref yuv
+
+\section intro Introduction
+
+"e-works video codec interface" is the software interface for video codec implementation in e-works videoconferencing platform.\n
+Video codec can choose to support video fragmentation.
+If explicit support for fragmentation is not available in a codec, videoconferencing platform
+provides a simple fragmentation method.
+
+\section usage Short implementation notes
+
+Codec description is obtained by calling:
+\li #GetName
+\li #GetApiVersion
+\li #GetPayload
+\li #GetParamsDefault
+\li #FragSupport
+
+Some functions must be called after others, because some structures are to be initialized.\n
+
+Functions to create and release data structures for encoding and decoding,
+called as first and as last function, are:
+\li #NewCodec
+\li #DeleteCodec
+
+Functions for frames encoding must be called in the following order:
+\li #EncInit
+\li #Encode (once per frame)
+\li #EncFree
+
+Functions for frame decoding must be called in the following order:
+\li #DecInit
+\li #Decode (once per frame)
+\li #DecFree
+
+\section yuv Yuv420P frame format
+Yuv frames are stored in the format outlined below; inside brackets is byte position for a 4 by 4 example frame:\n\n
+Y luminance
+<table>
+    <tr>
+        <td>l0 (0)</td>
+        <td>l1 (1)</td>
+        <td>l2 (2)</td>
+        <td>l3 (3)</td>
+    </tr>
+    <tr>
+        <td>l4 (4)</td>
+        <td>l5 (5)</td>
+        <td>l6 (6)</td>
+        <td>l7 (7)</td>
+    </tr>
+    <tr>
+        <td>l8 (8)</td>
+        <td>l9 (9)</td>
+        <td>l10 (10)</td>
+        <td>l11 (11)</td>
+    </tr>
+    <tr>
+        <td>l12 (12)</td>
+        <td>l13 (13)</td>
+        <td>l14 (14)</td>
+        <td>l15 (15)</td>
+    </tr>
+</table>
+
+U crominance
+<table>
+    <tr>
+        <td>u0 (16)</td>
+        <td>u1 (17)</td>
+    </tr>
+    <tr>
+        <td>u2 (18)</td>
+        <td>u3 (19)</td>
+    </tr>
+</table>
+
+V crominance
+<table>
+    <tr>
+        <td>v0 (20)</td>
+        <td>v1 (21)</td>
+    </tr>
+    <tr>
+        <td>v2 (22)</td>
+        <td>v3 (23)</td>
+    </tr>
+</table>
+
+Additional bytes must be allocated for odd sized frames, as U and V crominance
+must mantain alignment.
+For a 3 by 3 frame, 9 bytes are allocated for Y luminance, 4 bytes for U crominance
+and 4 bytes for V crominance.
+*/

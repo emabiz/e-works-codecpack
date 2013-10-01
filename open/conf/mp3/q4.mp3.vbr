@@ -1,0 +1,3 @@
+#-V 4 VBR quality setting  (0=highest quality, 9=lowest)
+flags2=+reservoir
+global_quality=472
