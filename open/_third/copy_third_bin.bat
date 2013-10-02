@@ -7,8 +7,8 @@ IF NOT EXIST %_RELEASE_DIR% MD %_RELEASE_DIR%
 IF NOT EXIST %_DEBUG_DIR% MD %_DEBUG_DIR%
 
 echo pthread
-copy _inst_base\bin\libpthread-2.dll %_RELEASE_DIR%
-copy _inst_base\bin\libpthread-2.dll %_DEBUG_DIR% 
+copy _inst_base\bin\pthreadGC2.dll %_RELEASE_DIR%
+copy _inst_base\bin\pthreadGC2.dll %_DEBUG_DIR% 
 
 echo ffmpeg-open
 copy _inst_base\bin\avcodec-53.lib %_RELEASE_DIR%

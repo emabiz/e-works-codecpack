@@ -73,6 +73,7 @@ You can download setup from release section
 Video dlls depend on libx264, ffmpeg and gtest, so compilation order must be followed
 	
 	Notes:	
+	pthreadGC2.dll is taken from MinGW\bin folder
 	pthreads website: http://sourceware.org/pthreads-win32
 
 

@@ -27,4 +27,4 @@ if [ ! -d "$dir" ]; then
 fi
 
 cd ..
-cp ./_download/libpthread-2.dll $MINGBASE/bin/
+cp ./_download/pthreadGC2.dll $MINGBASE/bin/
