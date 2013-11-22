@@ -29,7 +29,7 @@ The codecpack can be used by:
 GPLv2. See LICENSE file
 
 ## Setup ##
-You can download setup from release section
+You can download setup from github releases menu (not Release source code)
 
 # Building instructions #
 
