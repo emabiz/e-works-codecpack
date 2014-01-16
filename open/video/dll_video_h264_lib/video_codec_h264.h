@@ -58,6 +58,7 @@ namespace ew
 		x264_param_t x4_param_;
 		x264_picture_t x4_pic_;
 		x264_t *x4_ctx_;
+		int frameNum_;
 	};
 
 

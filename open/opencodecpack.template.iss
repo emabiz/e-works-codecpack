@@ -3,7 +3,7 @@
 
 [Setup]
 AppName=open codecpack 
-AppVerName=open codecpack 6.4.0.4
+AppVerName=open codecpack 6.4.0.5
 AppPublisher=ewfilters team
 AppPublisherURL=https://github.com/emabiz/e-works-codecpack
 AppSupportURL=https://github.com/emabiz/e-works-codecpack
@@ -15,7 +15,7 @@ OutputDir=.\
 OutputBaseFilename=opencodecpack_setup
 Compression=lzma
 SolidCompression=yes
-VersionInfoVersion=6.4.0.4
+VersionInfoVersion=6.4.0.5
 PrivilegesRequired=none
 UsePreviousAppDir=yes
 
@@ -36,7 +36,8 @@ Source: "..\Release\swscale-2.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 Source: "..\Release\ewh263.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 Source: "..\Release\ewh264.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 Source: "..\Release\ewxvid.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
-Source: "..\Release\libx264-136.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
+Source: "..\Release\libx264-138.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
+;Source: "..\Release\libpthread-2.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 Source: "..\Release\pthreadGC2.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 Source: "..\Release\xvidcore.dll"; DestDir: "{app}\dll"; Flags: ignoreversion
 

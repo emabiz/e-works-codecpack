@@ -61,7 +61,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>../../../$(Configuration)/libx264-136.lib;../../../$(Configuration)/avutil-51.lib;../../../$(Configuration)/avcodec-53.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../../$(Configuration)/libx264-138.lib;../../../$(Configuration)/avutil-51.lib;../../../$(Configuration)/avcodec-53.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)ewh264.dll</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -89,7 +89,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>../../../$(Configuration)/libx264-136.lib;../../../$(Configuration)/avutil-51.lib;../../../$(Configuration)/avcodec-53.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../../$(Configuration)/libx264-138.lib;../../../$(Configuration)/avutil-51.lib;../../../$(Configuration)/avcodec-53.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)ewh264.dll</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

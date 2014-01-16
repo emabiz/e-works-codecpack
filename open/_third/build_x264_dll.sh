@@ -1,5 +1,8 @@
 #!/bin/sh
-libver=libx264-136
+#libver=libx264-124
+#libver=libx264-136
+libver=libx264-138
+
 cd x264-dll
 ./configure --disable-avs --enable-shared # does not support different directories 
 echo dll creation...
