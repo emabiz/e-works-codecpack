@@ -57,8 +57,8 @@ namespace ew
 			goto InitEncoder_ErrInitParent;
 
 		// parameters
-		//_VERIFY(0 == x264_param_default_preset(&x4_param_, "veryfast", "zerolatency"));
-		x264_param_default(&x4_param_);
+		_VERIFY(0 == x264_param_default_preset(&x4_param_, "veryfast", "zerolatency"));
+		//x264_param_default(&x4_param_);
 		
 		x4_param_.b_annexb = 0; // raw nal for rtp; encode as annexb adding 0001 in front of nals
 
@@ -71,10 +71,12 @@ namespace ew
 		x4_param_.i_log_level = X264_LOG_NONE;
 #endif
 		// threading
-		//x4_param_.i_threads = X264_THREADS_AUTO;
-		//x4_param_.b_sliced_threads = 1;
+		/*
+		x4_param_.i_threads = X264_THREADS_AUTO;
+		x4_param_.b_sliced_threads = 1;
+		*/		
 		x4_param_.i_threads = 1;
-		x4_param_.i_sync_lookahead = 0;
+		x4_param_.i_sync_lookahead = 0;		
 		// dimensions
 		x4_param_.i_width = width;
 		x4_param_.i_height = height;
@@ -82,7 +84,16 @@ namespace ew
 		x4_param_.i_fps_num = fps;
 		x4_param_.i_fps_den = 1;
 		// bitrate
-		const int RC_MARGIN = 10000; /*bits per sec*/
+		
+		/*
+		x4_param_.rc.i_rc_method = X264_RC_CRF;
+		x4_param_.rc.i_vbv_max_bitrate = bitrate / 1000;
+		x4_param_.rc.i_vbv_buffer_size = bitrate / (1000 * fps); //kbit
+		*/
+		
+
+		
+		const int RC_MARGIN = 10000; //bits per sec
 		if (bitrate > RC_MARGIN)
 			bitrate -= RC_MARGIN;
 		x4_param_.rc.i_lookahead = 0;
@@ -92,7 +103,7 @@ namespace ew
 		x4_param_.rc.i_vbv_max_bitrate = ((bitrate+RC_MARGIN/2)/1000);
 		x4_param_.rc.i_vbv_buffer_size = x4_param_.rc.i_vbv_max_bitrate;
 		x4_param_.rc.f_vbv_buffer_init = 0.5;
-
+		
 		// key frame
 		//x4_param_.b_intra_refresh = 1;
 		x4_param_.i_keyint_max = GetParamArchiveH264Enc()->GetGopSize();
@@ -106,11 +117,13 @@ namespace ew
 #endif
 		}
 		// only baseline profile
+		
 		x4_param_.analyse.b_transform_8x8 = 0;
 		x4_param_.b_cabac = 0;
 		x4_param_.i_cqm_preset = X264_CQM_FLAT;
 		x4_param_.i_bframe = 0;
 		x4_param_.analyse.i_weighted_pred = X264_WEIGHTP_NONE;
+		
 
 		const ParamArchiveH264Enc *paramH264 = dynamic_cast<const ParamArchiveH264Enc *>(param_video());
 		_ASSERT(NULL != paramH264);
@@ -158,10 +171,11 @@ InitEncoder_ErrInitParent:
 		if (bitrate() < 0)
 			return 0;
 
-		x4_pic_.i_type = 0 != force_key_frame ? X264_TYPE_IDR : X264_TYPE_AUTO;
+		x4_pic_.i_type = 0 != force_key_frame ? X264_TYPE_IDR : X264_TYPE_AUTO;		
 		x4_pic_.i_qpplus1 = 0;
 		x4_pic_.i_pts = frameNum_;
 		x4_pic_.param = NULL;
+		
 
 		x264_nal_t *nal_ary = NULL;
 		int nal_count = 0;
