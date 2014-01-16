@@ -92,7 +92,7 @@ Video dlls depend on libx264, ffmpeg and gtest, so compilation order must be fol
 
 ### Build libx264 (ewh264.dll) ###
 	website: http://www.videolan.org/developers/x264.html
-	Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264-dll
+	Extract _third/_download/x264-snapshot-20140114-2245-stable.tar.bz2.tar.bz2.tar.bz2 into _third/x264-dll
 	
 	Modify "configure" file in section "generate config files" (line 1171):
 	            #echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
@@ -135,7 +135,7 @@ ffmpeg depends on some codec libraries, so compilation order must be followed
 
 ### Build libx264 (ffmpeg) ###
 	website: http://www.videolan.org/developers/x264.html
-	Extract _third/_download/x264-snapshot-20120508-2245.tar.bz2 into _third/x264
+	Extract _third/x264-snapshot-20140114-2245-stable.tar.bz2.tar.bz2.tar.bz2 into _third/x264
 	Open mingw shell, go to open/_third
 	Launch ". ./build__settings.sh" (don't forget sourcing)
 	Launch ./build_x264.sh
